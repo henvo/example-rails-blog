@@ -1,0 +1,19 @@
+.container
+  .row
+    - if @article.errors.any?
+      - @article.errors.full_messages.each do |msg|
+        .alert.alert-warning
+          = msg
+  .row
+    %h1 Edit an article
+    = form_for :article, url: article_path(@article), method: :patch do |f|
+      %p
+        = f.label :title
+        %br
+        = f.text_field :title
+      %p
+        = f.label :text
+        %br
+        = f.text_area :text
+      %p
+        = f.submit

@@ -6,11 +6,18 @@
     = javascript_include_tag 'application'
     = csrf_meta_tags
     %link{:type => "text/css", :rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"}
+    %link{:type => "text/css", :rel => "stylesheet", :href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"}
   %body
     %nav.navbar.navbar-default
-      .container-fluid
+      .container
         .navbar-header
-          %a.navbar-brand{:href => "#"}
+          %a.navbar-brand{:href => "/#"}
             Example-Ruby-Blog
+        %ul.nav.navbar-nav
+          %li
+            = link_to 'Articles', controller: 'articles'
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            = link_to 'New Article', new_article_path
     .wrapper
       = yield

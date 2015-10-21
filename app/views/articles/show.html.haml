@@ -1,3 +1,19 @@
 .container
   .row
-    %h1 Show Article
+    .col-md-12
+      .page-header
+        %h1
+          = @article.title
+          %small= Article
+  .row
+    .col-md-12
+      %p.lead
+        = @article.text
+  .row
+    .col-md-12
+      %p.text-center
+        = link_to 'Edit', edit_article_path(@article)
+        &nbsp;
+        = link_to 'Back', articles_path
+        &nbsp;
+        = link_to 'Delete', article_path(@article), method: :delete
