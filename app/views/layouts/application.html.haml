@@ -12,12 +12,11 @@
       .container
         .navbar-header
           %a.navbar-brand{:href => "/#"}
+            %i.fa.fa-bullhorn
             Example-Ruby-Blog
-        %ul.nav.navbar-nav
-          %li
-            = link_to 'Articles', controller: 'articles'
         %ul.nav.navbar-nav.navbar-right
           %li
-            = link_to 'New Article', new_article_path
+            = link_to '<i class="fa fa-plus-circle"></i> New Article'.html_safe,
+              new_article_path
     .wrapper
       = yield
